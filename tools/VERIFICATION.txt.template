@@ -1,4 +1,4 @@
-VERIFICATION
+﻿VERIFICATION
 Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
  
@@ -17,16 +17,16 @@ expected to invalidate a checksum verification when downloading from this URL.
 As a workaround, this package's creation process includes the creation of a historical
 snapshot via the Internet Archive's Wayback Machine to create a permanent backup source.
 This snapshot can be accessed at the following URL:
-https://web.archive.org/web/20220925163946/https://dlaa.me/Samples/Insomnia/Insomnia.zip
+%snapshotUrl%
 
-The following PowerShell command will print a calculated SHA256 hash:
+The following PowerShell command will print a calculated %checksumType% hash:
 
-    (Get-FileHash -Path Insomnia.zip -Algorithm SHA256).Hash
+    (Get-FileHash -Path Insomnia.zip -Algorithm %checksumType%).Hash
 
 This command should be executed against an independently downloaded archive, as well
 as the copy distributed with the package. Both hash values should be identical. A
 matching hash value should confirm that no corruption or tampering has occurred
 during this package's generation process.
 
-For reference, the following SHA256 hash was calculated during the package's automated creation:
-8E673EB5D0B90D3BF40C378778857C977AED85C26D198139BCFFA76DB729D5F8
+For reference, the following %checksumType% hash was calculated during the package's automated creation:
+%checksumValue%

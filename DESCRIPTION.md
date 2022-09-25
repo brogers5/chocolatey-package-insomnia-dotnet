@@ -1,21 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
-  <metadata>
-    <id>insomnia-dotnet</id>
-    <version>1.0.0.0</version>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-insomnia-dotnet/tree/v1.0.0.0</packageSourceUrl>
-    <owners>sublym0nal</owners>
-    <title>Insomnia (.NET)</title>
-    <authors>David Anson</authors>
-    <projectUrl>https://dlaa.me/Insomnia/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-insomnia-dotnet@b0f425b1edec3fe1ef231bc6570a23adc7ec5405/insomnia.png</iconUrl>
-    <copyright>Copyright © Microsoft 2009-2010</copyright>
-    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <tags>insomnia sleep s3 hibernate s4 power .net dotnet utility portable foss</tags>
-    <summary>A simple utility to temporarily stop your computer from going to sleep.</summary>
-    <description><![CDATA[
+
 ---
 ### [choco://insomnia-dotnet](choco://insomnia-dotnet)
 To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support ](https://community.chocolatey.org/packages/choco-protocol-support)
@@ -57,18 +40,3 @@ For future upgrade operations, consider opting into Chocolatey's `useRememberedA
 ```
 choco feature enable -n=useRememberedArgumentsForUpgrades
 ```
-]]></description>
-    <releaseNotes>https://dlaa.me/blog/post/10144913</releaseNotes>
-    <dependencies>
-      <dependency id="dotnet3.5" version="3.5" />
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="tools\chocolateybeforemodify.ps1" target="tools" />
-    <file src="tools\chocolateyinstall.ps1" target="tools" />
-    <file src="tools\chocolateyuninstall.ps1" target="tools" />
-    <file src="tools\Insomnia.zip" target="tools" />
-    <file src="tools\LICENSE.txt" target="tools" />
-    <file src="tools\VERIFICATION.txt" target="tools" />
-  </files>
-</package>
