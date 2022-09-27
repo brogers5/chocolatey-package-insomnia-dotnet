@@ -8,10 +8,10 @@
 choco install insomnia-dotnet
 ```
 
-Alternatively, the packages as published on the Chocolatey Community Repository will also be mirrored on this repository's [Releases page](https://github.com/brogers5/chocolatey-package-insomnia-dotnet/releases). The `nupkg` can be installed from the current directory as follows:
+Alternatively, the packages as published on the Chocolatey Community Repository will also be mirrored on this repository's [Releases page](https://github.com/brogers5/chocolatey-package-insomnia-dotnet/releases). The `nupkg` can be installed from the current directory (with dependencies sourced from the Community Repository) as follows:
 
 ```shell
-choco install insomnia-dotnet -source="'.'"
+choco install insomnia-dotnet -source="'.;https://community.chocolatey.org/api/v2/'"
 ```
 
 ## Build
