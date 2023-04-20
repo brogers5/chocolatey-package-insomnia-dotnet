@@ -49,7 +49,8 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $tempArchive = New-TemporaryFile
+    #Use filename with .zip extension to prevent issues with Expand-Archive in Windows PowerShell
+    $tempArchive = "$(New-TemporaryFile).zip"
     $downloadUri = 'https://dlaa.me/Samples/Insomnia/Insomnia.zip'
     $userAgent = 'Update checker of Chocolatey Community Package ''insomnia-dotnet'''
     Invoke-WebRequest -Uri $downloadUri -UserAgent $userAgent -OutFile $tempArchive -UseBasicParsing
