@@ -3,17 +3,15 @@ Import-Module au
 $currentPath = (Split-Path $MyInvocation.MyCommand.Definition)
 $toolsPath = Join-Path -Path $currentPath -ChildPath 'tools'
 
-function global:au_BeforeUpdate ($Package)  {
+function global:au_BeforeUpdate ($Package) {
     Get-RemoteFiles -Purge -NoSuffix -Algorithm sha256
 
-    if (!(Test-Path -Path "$env:PROGRAMFILES\Mozilla Firefox\firefox.exe"))
-    {
+    if (!(Test-Path -Path "$env:PROGRAMFILES\Mozilla Firefox\firefox.exe")) {
         choco install firefox -y
     }
 
     $seleniumModuleName = 'Selenium'
-    if (!(Get-Module -ListAvailable -Name $seleniumModuleName))
-    {
+    if (!(Get-Module -ListAvailable -Name $seleniumModuleName)) {
         Install-Module -Name $seleniumModuleName
     }
     Import-Module $seleniumModuleName
@@ -29,22 +27,22 @@ function global:au_BeforeUpdate ($Package)  {
     Set-DescriptionFromReadme -Package $Package -ReadmePath ".\DESCRIPTION.md"
 }
 
-function global:au_AfterUpdate ($Package)  {
+function global:au_AfterUpdate ($Package) {
 
 }
 
 function global:au_SearchReplace {
     @{
-        'build.ps1' = @{
+        'build.ps1'                     = @{
             '(^\s*Url32\s*=\s*)(''.*'')' = "`$1'$($Latest.ArchivedURL)'"
         }
         "$($Latest.PackageName).nuspec" = @{
             "<packageSourceUrl>[^<]*</packageSourceUrl>" = "<packageSourceUrl>https://github.com/brogers5/chocolatey-package-$($Latest.PackageName)/tree/v$($Latest.Version)</packageSourceUrl>"
-            "<copyright>[^<]*</copyright>" = "<copyright>Copyright © Microsoft 2009-$(Get-Date -Format yyyy)</copyright>"
+            "<copyright>[^<]*</copyright>"               = "<copyright>Copyright © Microsoft 2009-$(Get-Date -Format yyyy)</copyright>"
         }
-        'tools\VERIFICATION.txt' = @{
-            '%snapshotUrl%' = "$($Latest.ArchivedURL)"
-            '%checksumType%' = "$($Latest.ChecksumType32.ToUpper())"
+        'tools\VERIFICATION.txt'        = @{
+            '%snapshotUrl%'   = "$($Latest.ArchivedURL)"
+            '%checksumType%'  = "$($Latest.ChecksumType32.ToUpper())"
             '%checksumValue%' = "$($Latest.Checksum32)"
         }
     }
@@ -66,7 +64,7 @@ function global:au_GetLatest {
     Remove-Item -Path $tempArchive -Force
 
     return @{
-        Url32 = $downloadUri
+        Url32   = $downloadUri
         Version = $softwareVersion
     }
 }
