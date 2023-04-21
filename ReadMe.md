@@ -1,9 +1,12 @@
 ﻿# <img src="https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-insomnia-dotnet@b0f425b1edec3fe1ef231bc6570a23adc7ec5405/insomnia.png" width="48" height="48"/> Chocolatey Package: [Insomnia (.NET)](https://community.chocolatey.org/packages/insomnia-dotnet)
+
 [![Chocolatey package version](https://img.shields.io/chocolatey/v/insomnia-dotnet.svg)](https://community.chocolatey.org/packages/insomnia-dotnet)
 [![Chocolatey package download count](https://img.shields.io/chocolatey/dt/insomnia-dotnet.svg)](https://community.chocolatey.org/packages/insomnia-dotnet)
 
 ## Install
+
 [Install Chocolatey](https://chocolatey.org/install), and run the following command to install the latest approved version on the Chocolatey Community Repository:
+
 ```shell
 choco install insomnia-dotnet
 ```
@@ -15,6 +18,7 @@ choco install insomnia-dotnet -source="'.;https://community.chocolatey.org/api/v
 ```
 
 ## Build
+
 [Install Chocolatey](https://chocolatey.org/install) and the [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au), then clone this repository.
 
 Once cloned, simply run `build.ps1`. The ZIP archive is intentionally untracked to avoid bloating the repository, so the script will download the Insomnia portable ZIP archive from the mirror created by this package (to ensure reproducibility in case of an older version), then packs everything together.
@@ -27,11 +31,13 @@ Note that Chocolatey package builds are non-deterministic. Consequently, an inde
 This package should be automatically updated by the [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au). If it is outdated by more than a few days, please [open an issue](https://github.com/brogers5/chocolatey-package-insomnia-dotnet/issues).
 
 AU expects the parent directory that contains this repository to share a name with the Nuspec (`insomnia-dotnet`). Your local repository should therefore be cloned accordingly:
+
 ```shell
 git clone git@github.com:brogers5/chocolatey-package-insomnia-dotnet.git insomnia-dotnet
 ```
 
 Alternatively, a junction point can be created that points to the local repository (preferably within a repository adopting the [AU packages template](https://github.com/majkinetor/au-packages-template)):
+
 ```shell
 mklink /J insomnia-dotnet ..\chocolatey-package-insomnia-dotnet
 ```
