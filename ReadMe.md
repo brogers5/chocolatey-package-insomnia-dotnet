@@ -28,7 +28,8 @@ A successful build will create `insomnia-dotnet.w.x.y.z.nupkg`, where `w.x.y.z` 
 Note that Chocolatey package builds are non-deterministic. Consequently, an independently built package will fail a checksum validation against officially published packages.
 
 ## Update
-This package should be automatically updated by the [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au). If it is outdated by more than a few days, please [open an issue](https://github.com/brogers5/chocolatey-package-insomnia-dotnet/issues).
+
+This package has an update script implemented with the [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au), but the project does not appear to be actively maintained anymore, so it is not included with my normally scheduled update runs. If the project has a new release, please [open an issue](https://github.com/brogers5/chocolatey-package-insomnia-dotnet/issues).
 
 AU expects the parent directory that contains this repository to share a name with the Nuspec (`insomnia-dotnet`). Your local repository should therefore be cloned accordingly:
 
